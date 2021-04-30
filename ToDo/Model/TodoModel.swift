@@ -12,7 +12,7 @@ struct Todo: Codable, Identifiable {
 	let title: String
 	let content: String
 	let status: Int
-	let user_id: User.ID
+	let user_id: Int
 	let created_at: Date
 	let uptated_at: Date
 }

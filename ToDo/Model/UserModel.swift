@@ -7,14 +7,28 @@
 
 import Foundation
 
-struct User: Identifiable {
+//struct User: Codable {
+//	let id: Int?
+//	let pseudo: String
+//	let password: String
+//	let email: String?
+//	let rememberMeToken: String?
+//	let created_at: Date?
+//	let uptated_at: Date?
+//}
+
+struct User: Codable {
 	let id: Int
-	let pseudo: String
-	let password: String
-	let email: String
+	let pseudo, email: String
 	let rememberMeToken: String?
-	let created_at: Date
-	let uptated_at: Date
+	let createdAt, updatedAt: String
+	
+	enum CodingKeys: String, CodingKey {
+		case id, pseudo, email
+		case rememberMeToken = "remember_me_token"
+		case createdAt = "created_at"
+		case updatedAt = "updated_at"
+	}
 }
 
-let MOCK_USER: User = .init(id: 1, pseudo: "Demo", password: "123456", email: "john@doe.fr", rememberMeToken: "", created_at: Date(), uptated_at: Date())
+let MOCK_USER: User = .init(id: 1, pseudo: "Demo", email: "john@doe.fr", rememberMeToken: "", createdAt: "", updatedAt: "")
