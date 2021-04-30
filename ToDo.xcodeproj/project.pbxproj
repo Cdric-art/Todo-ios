@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A73DB696263C27E3007BFB48 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73DB695263C27E3007BFB48 /* LoginView.swift */; };
+		A73DB698263C27F2007BFB48 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73DB697263C27F2007BFB48 /* SignUpView.swift */; };
 		A7CDD264263734BE001AE75C /* ToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDD263263734BE001AE75C /* ToDoApp.swift */; };
 		A7CDD266263734BE001AE75C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDD265263734BE001AE75C /* ContentView.swift */; };
 		A7CDD268263734BE001AE75C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CDD267263734BE001AE75C /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A73DB695263C27E3007BFB48 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A73DB697263C27F2007BFB48 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A7CDD260263734BE001AE75C /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CDD263263734BE001AE75C /* ToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoApp.swift; sourceTree = "<group>"; };
 		A7CDD265263734BE001AE75C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +37,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A73DB692263C279C007BFB48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A73DB695263C27E3007BFB48 /* LoginView.swift */,
+				A73DB697263C27F2007BFB48 /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A73DB693263C27A3007BFB48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A73DB694263C27AC007BFB48 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		A7CDD257263734BE001AE75C = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +81,9 @@
 			children = (
 				A7CDD263263734BE001AE75C /* ToDoApp.swift */,
 				A7CDD265263734BE001AE75C /* ContentView.swift */,
+				A73DB694263C27AC007BFB48 /* ViewController */,
+				A73DB693263C27A3007BFB48 /* Model */,
+				A73DB692263C279C007BFB48 /* View */,
 				A7CDD267263734BE001AE75C /* Assets.xcassets */,
 				A7CDD26C263734BE001AE75C /* Info.plist */,
 				A7CDD269263734BE001AE75C /* Preview Content */,
@@ -138,6 +168,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A73DB698263C27F2007BFB48 /* SignUpView.swift in Sources */,
+				A73DB696263C27E3007BFB48 /* LoginView.swift in Sources */,
 				A7CDD266263734BE001AE75C /* ContentView.swift in Sources */,
 				A7CDD264263734BE001AE75C /* ToDoApp.swift in Sources */,
 			);
