@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A73DB696263C27E3007BFB48 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73DB695263C27E3007BFB48 /* LoginView.swift */; };
 		A73DB698263C27F2007BFB48 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73DB697263C27F2007BFB48 /* SignUpView.swift */; };
+		A73DB69A263C3C23007BFB48 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73DB699263C3C23007BFB48 /* UserModel.swift */; };
+		A73DB69C263C3D27007BFB48 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73DB69B263C3D27007BFB48 /* TodoModel.swift */; };
 		A7CDD264263734BE001AE75C /* ToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDD263263734BE001AE75C /* ToDoApp.swift */; };
 		A7CDD266263734BE001AE75C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDD265263734BE001AE75C /* ContentView.swift */; };
 		A7CDD268263734BE001AE75C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CDD267263734BE001AE75C /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* Begin PBXFileReference section */
 		A73DB695263C27E3007BFB48 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A73DB697263C27F2007BFB48 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A73DB699263C3C23007BFB48 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A73DB69B263C3D27007BFB48 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		A7CDD260263734BE001AE75C /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CDD263263734BE001AE75C /* ToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoApp.swift; sourceTree = "<group>"; };
 		A7CDD265263734BE001AE75C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		A73DB693263C27A3007BFB48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A73DB699263C3C23007BFB48 /* UserModel.swift */,
+				A73DB69B263C3D27007BFB48 /* TodoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +177,8 @@
 				A73DB698263C27F2007BFB48 /* SignUpView.swift in Sources */,
 				A73DB696263C27E3007BFB48 /* LoginView.swift in Sources */,
 				A7CDD266263734BE001AE75C /* ContentView.swift in Sources */,
+				A73DB69C263C3D27007BFB48 /* TodoModel.swift in Sources */,
+				A73DB69A263C3C23007BFB48 /* UserModel.swift in Sources */,
 				A7CDD264263734BE001AE75C /* ToDoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
