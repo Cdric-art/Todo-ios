@@ -13,14 +13,21 @@ struct ContentView: View {
 	@State var password: String = ""
 	@State var email: String = ""
 	
-	@State var showSignUp: Bool = true
+	@State var showSignUp: Bool = false
+	@State var successNavigation: Bool = false
+	@State var successLogin: Bool = false
 	
 	private func handleLogin() {
-		
+		let login = UserController()
+		login.loginUser(pseudo: self.pseudo, password: self.password)
+		successLogin = true
+		DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+			successNavigation = true
+		}
 	}
 	
 	private func handleSignUp() {
-		
+
 	}
 	
 	private func changeView() {
@@ -28,41 +35,54 @@ struct ContentView: View {
 	}
 	
     var body: some View {
-		VStack {
-			Image("swiftLogo")
-				.resizable()
-				.clipped()
-				.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-			Text("Hello, Swift !")
-				.font(.title2)
+		NavigationView {
+			ZStack {
+				VStack {
+					Image("swiftLogo")
+						.resizable()
+						.clipped()
+						.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+					Text("Hello, Swift !")
+						.font(.title2)
+						.padding()
+					if !showSignUp {
+						LoginView(pseudo: $pseudo, password: $password)
+							.padding(.top, 50)
+						NavigationLink(destination: TodoView(pseudo: $pseudo), isActive: $successNavigation) {
+							Button(action: handleLogin, label: {
+							LoginButton()
+							})
+						}
+						Button(action: changeView, label: {
+							Text("S‘inscrire")
+								.font(.subheadline)
+								.padding(.top, 10)
+								.foregroundColor(.black)
+						})
+					} else {
+						SignUpView(pseudo: $pseudo, password: $password, email: $email)
+							.padding()
+						Button(action: handleSignUp, label: {
+							SignUpButton()
+						})
+						Button(action: changeView, label: {
+								Text("Se connecter")
+									.font(.subheadline)
+									.padding(.top, 10)
+									.foregroundColor(.black)
+						})
+					}
+				}
 				.padding()
-			if !showSignUp {
-				LoginView(pseudo: $pseudo, password: $password)
-					.padding(.top, 50)
-				Button(action: handleLogin, label: {
-					LoginButton()
-				})
-				Button(action: changeView, label: {
-					Text("S‘inscrire")
+				.opacity(successLogin ? 0.1 : 1)
+				
+				if successLogin {
+					Text("Chargement...")
 						.font(.subheadline)
-						.padding(.top, 10)
-						.foregroundColor(.black)
-				})
-			} else {
-				SignUpView(pseudo: $pseudo, password: $password, email: $email)
-					.padding()
-				Button(action: handleSignUp, label: {
-					SignUpButton()
-				})
-				Button(action: changeView, label: {
-					Text("Se connecter")
-						.font(.subheadline)
-						.padding(.top, 10)
-						.foregroundColor(.black)
-				})
+						.padding()
+				}
 			}
 		}
-		.padding()
 	}
 }
 
