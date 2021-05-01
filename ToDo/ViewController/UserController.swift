@@ -7,8 +7,7 @@
 
 import Foundation
 
-class UserController: ObservableObject {
-	@Published var user = [User]()
+class UserController {
 	
 	let loginUrl = "http://127.0.0.1:3333/login"
 	let registerUrl = "http://127.0.0.1:3333/register"
@@ -28,12 +27,12 @@ class UserController: ObservableObject {
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 		
 		// Set HTTP Request Body
-		let user = ["pseudo": pseudo, "password": password]
-		let jsonData = try? JSONEncoder().encode(user)
+		let userField = ["pseudo": pseudo, "password": password]
+		let jsonData = try? JSONEncoder().encode(userField)
 		
 		request.httpBody = jsonData
 		
-		let task = URLSession.shared.dataTask(with: request) { ( data, _, error ) in
+		URLSession.shared.dataTask(with: request) { ( data, _, error ) in
 			
 			if let error = error {
 				print("Error request: \(error)")
@@ -49,10 +48,7 @@ class UserController: ObservableObject {
 				print("errJSON : \(errJSON)")
 			}
 	
-		}
-		
-		task.resume()
-		
+		}.resume()
 		
 	}
 	

@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct TodoView: View {
-	@Binding var pseudo: String
 	
     var body: some View {
 		NavigationView {
-			Text("Welcome \(pseudo)")
+			Text("Welcome")
 		}
 		.navigationBarHidden(true)
     }
@@ -20,6 +19,6 @@ struct TodoView: View {
 
 struct TodoView_Previews: PreviewProvider {
     static var previews: some View {
-		TodoView(pseudo: .constant("Demo"))
+		TodoView()
     }
 }

@@ -21,9 +21,6 @@ struct ContentView: View {
 		let login = UserController()
 		login.loginUser(pseudo: self.pseudo, password: self.password)
 		successLogin = true
-		DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-			successNavigation = true
-		}
 	}
 	
 	private func handleSignUp() {
@@ -48,7 +45,7 @@ struct ContentView: View {
 					if !showSignUp {
 						LoginView(pseudo: $pseudo, password: $password)
 							.padding(.top, 50)
-						NavigationLink(destination: TodoView(pseudo: $pseudo), isActive: $successNavigation) {
+						NavigationLink(destination: TodoView(), isActive: $successLogin) {
 							Button(action: handleLogin, label: {
 							LoginButton()
 							})
@@ -74,13 +71,6 @@ struct ContentView: View {
 					}
 				}
 				.padding()
-				.opacity(successLogin ? 0.1 : 1)
-				
-				if successLogin {
-					Text("Chargement...")
-						.font(.subheadline)
-						.padding()
-				}
 			}
 		}
 	}
@@ -88,7 +78,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+		ContentView()
     }
 }
 
