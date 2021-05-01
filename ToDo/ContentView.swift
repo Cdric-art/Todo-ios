@@ -14,13 +14,12 @@ struct ContentView: View {
 	@State var email: String = ""
 	
 	@State var showSignUp: Bool = false
-	@State var successNavigation: Bool = false
 	@State var successLogin: Bool = false
 	
 	private func handleLogin() {
 		let login = UserController()
 		login.loginUser(pseudo: self.pseudo, password: self.password)
-		successLogin = true
+		self.successLogin = true
 	}
 	
 	private func handleSignUp() {
@@ -28,7 +27,7 @@ struct ContentView: View {
 	}
 	
 	private func changeView() {
-		showSignUp.toggle()
+		self.showSignUp.toggle()
 	}
 	
     var body: some View {
@@ -45,7 +44,7 @@ struct ContentView: View {
 					if !showSignUp {
 						LoginView(pseudo: $pseudo, password: $password)
 							.padding(.top, 50)
-						NavigationLink(destination: TodoView(), isActive: $successLogin) {
+						NavigationLink(destination: TodoView(pseudo: $pseudo), isActive: $successLogin) {
 							Button(action: handleLogin, label: {
 							LoginButton()
 							})
