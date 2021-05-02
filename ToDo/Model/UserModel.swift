@@ -17,7 +17,7 @@ import Foundation
 //	let uptated_at: Date?
 //}
 
-struct User: Codable {
+struct User: Codable, Identifiable {
 	let id: Int
 	let pseudo, email: String
 	let rememberMeToken: String?

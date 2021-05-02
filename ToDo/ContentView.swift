@@ -9,21 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
 	
+	@State var user = [User]()
 	@State var pseudo: String = ""
 	@State var password: String = ""
 	@State var email: String = ""
 	
 	@State var showSignUp: Bool = false
 	@State var successLogin: Bool = false
+	@State var successSignUp: Bool = false
 	
 	private func handleLogin() {
-		let login = UserController()
-		login.loginUser(pseudo: self.pseudo, password: self.password)
-		self.successLogin = true
+		let login = UserController(pseudo: self.pseudo, password: self.password, email: self.email)
+		login.loginUser() { user in
+			self.user = user
+		}
+		self.successLogin.toggle()
 	}
 	
 	private func handleSignUp() {
-
+		let signUp = UserController(pseudo: self.pseudo, password: self.password, email: self.email)
+		signUp.signUpUser() { user in
+			self.user = user
+		}
+		self.successSignUp.toggle()
+		self.showSignUp.toggle()
 	}
 	
 	private func changeView() {
@@ -41,10 +50,16 @@ struct ContentView: View {
 					Text("Hello, Swift !")
 						.font(.title2)
 						.padding()
+					if successSignUp {
+						Text("Compte crée avec succes")
+							.font(.subheadline)
+							.foregroundColor(.green)
+							.padding()
+					}
 					if !showSignUp {
 						LoginView(pseudo: $pseudo, password: $password)
 							.padding(.top, 50)
-						NavigationLink(destination: TodoView(pseudo: $pseudo), isActive: $successLogin) {
+						NavigationLink(destination: TodoView(user: $user, pseudo: $pseudo, password: $password), isActive: $successLogin) {
 							Button(action: handleLogin, label: {
 							LoginButton()
 							})
