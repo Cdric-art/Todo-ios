@@ -59,7 +59,7 @@ struct ContentView: View {
 					if !showSignUp {
 						LoginView(pseudo: $pseudo, password: $password)
 							.padding(.top, 50)
-						NavigationLink(destination: TodoView(user: $user, pseudo: $pseudo, password: $password), isActive: $successLogin) {
+						NavigationLink(destination: TodoView(user: $user), isActive: $successLogin) {
 							Button(action: handleLogin, label: {
 							LoginButton()
 							})

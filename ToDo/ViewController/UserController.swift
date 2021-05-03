@@ -7,11 +7,11 @@
 
 import Foundation
 
-class UserController {
+public class UserController {
 	
-	let pseudo: String
-	let password: String
-	let email: String?
+	private let pseudo: String
+	private let password: String
+	private let email: String?
 	
 	init(pseudo: String, password: String, email:String?) {
 		self.pseudo = pseudo
@@ -19,11 +19,11 @@ class UserController {
 		self.email = email
 	}
 	
-	let loginUrl = "http://127.0.0.1:3333/login"
-	let registerUrl = "http://127.0.0.1:3333/register"
+	private let loginUrl = "http://127.0.0.1:3333/login"
+	private let registerUrl = "http://127.0.0.1:3333/register"
 	
 	
-	func loginUser(completion:@escaping ([User]) -> ()) {
+	internal func loginUser(completion:@escaping ([User]) -> ()) {
 		
 		// Prepare url
 		guard let url = URL(string: loginUrl) else { return }
@@ -63,7 +63,7 @@ class UserController {
 		
 	}
 	
-	func signUpUser(completion:@escaping ([User]) -> ()) {
+	internal func signUpUser(completion:@escaping ([User]) -> ()) {
 		
 		guard let url = URL(string: registerUrl) else { return }
 		

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TodoView: View {
 	@Binding var user: [User]
-	@Binding var pseudo: String
-	@Binding var password: String
 	
     var body: some View {
 		NavigationView {
