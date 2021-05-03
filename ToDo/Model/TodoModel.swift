@@ -7,17 +7,19 @@
 
 import Foundation
 
-struct Todo: Codable, Identifiable {
+struct TodoElement: Codable, Identifiable {
 	let id: Int
-	let title: String
-	let content: String
+	let title, content: String
 	let status: Int
-	let user_id: Int
-	let created_at: Date
-	let uptated_at: Date
+	let createdAt, updatedAt: String
+	let userID: Int
+	
+	enum CodingKeys: String, CodingKey {
+		case id, title, content, status
+		case createdAt = "created_at"
+		case updatedAt = "updated_at"
+		case userID = "user_id"
+	}
 }
 
-let MONK_TODO: [Todo] = [
-	.init(id: 1, title: "1er Todo", content: "Ma première todo", status: 0, user_id: 1, created_at: Date(), uptated_at: Date()),
-	.init(id: 2, title: "2eme Todo", content: "Ma deuxième todo", status: 1, user_id: 1, created_at: Date(), uptated_at: Date())
-]
+typealias Todo = [TodoElement]
