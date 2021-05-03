@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
 	
 	@State var user = [User]()
+	@State var token: String = ""
 	@State var pseudo: String = ""
 	@State var password: String = ""
 	@State var email: String = ""
@@ -20,8 +21,8 @@ struct ContentView: View {
 	
 	private func handleLogin() {
 		let login = UserController(pseudo: self.pseudo, password: self.password, email: self.email)
-		login.loginUser() { user in
-			self.user = user
+		login.loginUser() { token in
+			self.token = token.token
 		}
 		self.successLogin.toggle()
 	}
@@ -59,7 +60,7 @@ struct ContentView: View {
 					if !showSignUp {
 						LoginView(pseudo: $pseudo, password: $password)
 							.padding(.top, 50)
-						NavigationLink(destination: TodoView(user: $user), isActive: $successLogin) {
+						NavigationLink(destination: TodoView(token: $token, pseudo: $pseudo), isActive: $successLogin) {
 							Button(action: handleLogin, label: {
 							LoginButton()
 							})
@@ -87,6 +88,7 @@ struct ContentView: View {
 				.padding()
 			}
 		}
+		.navigationBarHidden(true)
 	}
 }
 

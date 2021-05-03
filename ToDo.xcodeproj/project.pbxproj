@@ -17,6 +17,8 @@
 		A7CDD266263734BE001AE75C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDD265263734BE001AE75C /* ContentView.swift */; };
 		A7CDD268263734BE001AE75C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CDD267263734BE001AE75C /* Assets.xcassets */; };
 		A7CDD26B263734BE001AE75C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CDD26A263734BE001AE75C /* Preview Assets.xcassets */; };
+		A7EEDAAC264001F700986BCA /* TodoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEDAAB264001F700986BCA /* TodoController.swift */; };
+		A7EEDAAE26402F0900986BCA /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EEDAAD26402F0900986BCA /* TokenModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		A7CDD267263734BE001AE75C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7CDD26A263734BE001AE75C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A7CDD26C263734BE001AE75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7EEDAAB264001F700986BCA /* TodoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoController.swift; sourceTree = "<group>"; };
+		A7EEDAAD26402F0900986BCA /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			children = (
 				A73DB699263C3C23007BFB48 /* UserModel.swift */,
 				A73DB69B263C3D27007BFB48 /* TodoModel.swift */,
+				A7EEDAAD26402F0900986BCA /* TokenModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -68,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				A73DB69D263C4939007BFB48 /* UserController.swift */,
+				A7EEDAAB264001F700986BCA /* TodoController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -183,9 +189,11 @@
 				A73DB698263C27F2007BFB48 /* SignUpView.swift in Sources */,
 				A73DB696263C27E3007BFB48 /* LoginView.swift in Sources */,
 				A73DB6A0263C66EE007BFB48 /* TodoView.swift in Sources */,
+				A7EEDAAE26402F0900986BCA /* TokenModel.swift in Sources */,
 				A7CDD266263734BE001AE75C /* ContentView.swift in Sources */,
 				A73DB69C263C3D27007BFB48 /* TodoModel.swift in Sources */,
 				A73DB69E263C4939007BFB48 /* UserController.swift in Sources */,
+				A7EEDAAC264001F700986BCA /* TodoController.swift in Sources */,
 				A73DB69A263C3C23007BFB48 /* UserModel.swift in Sources */,
 				A7CDD264263734BE001AE75C /* ToDoApp.swift in Sources */,
 			);

@@ -22,8 +22,7 @@ public class UserController {
 	private let loginUrl = "http://127.0.0.1:3333/login"
 	private let registerUrl = "http://127.0.0.1:3333/register"
 	
-	
-	internal func loginUser(completion:@escaping ([User]) -> ()) {
+	internal func loginUser(completion: @escaping (TokenAPI) -> ()) {
 		
 		// Prepare url
 		guard let url = URL(string: loginUrl) else { return }
@@ -51,19 +50,19 @@ public class UserController {
 			
 			guard let data = data else { return }
 			
-			let userLogin = try! JSONDecoder().decode(User.self, from: data)
+			let token = try! JSONDecoder().decode(TokenAPI.self, from: data)
 		
-			print("userLogin ::: \(userLogin)")
+			print("userLogin ::: \(token)")
 			
 			DispatchQueue.main.async {
-				completion([userLogin])
+				completion(token)
 			}
 	
 		}.resume()
 		
 	}
 	
-	internal func signUpUser(completion:@escaping ([User]) -> ()) {
+	internal func signUpUser(completion: @escaping ([User]) -> ()) {
 		
 		guard let url = URL(string: registerUrl) else { return }
 		
